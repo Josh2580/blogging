@@ -99,7 +99,7 @@ SIMPLE_JWT = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -202,7 +202,7 @@ USE_TZ = True
 
 mimetypes.add_type("text/css", ".css", True)
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 # if DEBUG:
@@ -213,15 +213,15 @@ MEDIA_URL = '/media/'
 #     MEDIA_ROOT = BASE_DIR / 'static/media'
 
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "public/",
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "public/",
+]
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, "public/"),
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+# STATICFILES_DIRS = os.path.join(BASE_DIR, "public/"),
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
-# STATIC_ROOT = BASE_DIR / "static" # It's called cdn because in production, we want cdn
+STATIC_ROOT = BASE_DIR / "static" # It's called cdn because in production, we want cdn
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
