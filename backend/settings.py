@@ -221,7 +221,7 @@ STATICFILES_DIRS = [
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
-STATIC_ROOT = BASE_DIR / "static" # It's called cdn because in production, we want cdn
+STATIC_ROOT = BASE_DIR / "staticfiles_build" # It's called cdn because in production, we want cdn
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
