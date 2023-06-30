@@ -213,7 +213,7 @@ MEDIA_URL = '/media/'
 #     MEDIA_ROOT = BASE_DIR / 'static/media'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "dist",
+    BASE_DIR / "dist/assets",
     BASE_DIR / "public",
 ]
 
