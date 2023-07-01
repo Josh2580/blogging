@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-bvjrk%_gqwui*!+$fvgm34-=(e%^*ft+euq7$yj$pq63)x91nj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.railway.app', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -214,14 +214,17 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "public",
-    "backend/dist",
+    BASE_DIR / "dist",
 ]
 
 # STATICFILES_DIRS = os.path.join(BASE_DIR, "public/"),
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
-STATIC_ROOT = BASE_DIR / "static" # It's called cdn because in production, we want cdn
+STATIC_ROOT = BASE_DIR / "staticfiles" # It's called cdn because in production, we want cdn
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
