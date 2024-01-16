@@ -30,7 +30,7 @@ urlpatterns = [
     path('comment/', include('blog.urls.comment_urls')),
     path('users/', include('users.urls')),
     path("", TemplateView.as_view(template_name='base.html')),
-    re_path(r".*", TemplateView.as_view(template_name='base.html')),
+    # re_path(r".*", TemplateView.as_view(template_name='base.html')),
 ] 
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

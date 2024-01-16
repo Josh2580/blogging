@@ -22,7 +22,7 @@ const initialState = {
 
 // console.log(initialState.userInfo);
 
-const authSlice = createSlice({
+const AuthSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -44,8 +44,8 @@ const authSlice = createSlice({
   },
 });
 
-export const { setCredentials, logout } = authSlice.actions;
-export default authSlice.reducer;
+export const { setCredentials, logout } = AuthSlice.actions;
+export default AuthSlice.reducer;
 
 export const selectCurrentUser = (state) => state.auth.user;
 export const selectCurrentToken = (state) => state.auth.token;
