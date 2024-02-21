@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django + Vite + React</title>
     <!-- if development -->
-    {% if not debug %}
+    <!-- 
     <script type="module" src="http://localhost:5173/@vite/client"></script>
 
     <script type="module">
@@ -20,9 +20,11 @@
       window.$RefreshSig$ = () => (type) => type;
       window.__vite_plugin_react_preamble_installed__ = true;
     </script>
+    
+    <script type="module" src="http://localhost:5173/src/main.jsx"></script> -->
 
-    <script type="module" src="http://localhost:5173/src/main.jsx"></script>
-    {% else %}
+    <!--  -->
+
     <link rel="stylesheet" href="{% static '/assets/css/index.min.css' %}" />
 
     <script
@@ -30,18 +32,9 @@
       crossorigin
       src="{% static '/assets/js/index.min.js' %}"
     ></script>
-    {% endif %}
+    <!--  -->
   </head>
   <body>
-    <!-- {% if debug %}
-    <script type="module" src="http://localhost:5173/src/main.jsx"></script>
-    {% else %}
-    <script
-      type="module"
-      crossorigin
-      src="{% static '/assets/index-868be90e.js' %}"
-    ></script>
-    {% endif %} -->
     <div id="root"></div>
   </body>
 </html>
