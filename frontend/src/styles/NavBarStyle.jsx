@@ -97,7 +97,7 @@ export const Footer = styled.div`
     color: white;
   }
   .copy {
-    background: #2d0f47;
+    /* background: #692c9f; */
     width: 100%;
     padding: 5px 1rem;
     color: white;

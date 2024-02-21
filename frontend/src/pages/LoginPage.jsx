@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../features/Post/PostApi";
 import { setCredentials } from "../features/auth/authSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   Login,
@@ -32,18 +34,30 @@ const LoginPage = () => {
     e.preventDefault();
     const userData = await loginUser({ email, password });
     // console.log(userData);
-    dispatch(setCredentials({ ...userData }));
-    setEmail("");
-    setPassword("");
-    navigate("/dashboard");
+    if (userData.data) {
+      // Notification Message
+      toast(`Login Successful`);
+      // Sending to the state User Token
+      dispatch(setCredentials({ ...userData }));
+      // Sending to the state User Profile
+      setEmail("");
+      setPassword("");
+      //Navigation
+      //  navigate("/dashboard");
+      navigate(-1);
+    } else if (userData.error) {
+      toast(`Login Failed: ${userData.error.data.detail}`);
+    }
   };
 
   useEffect(() => {
-    userData && navigate("/dashboard");
+    userData && navigate(-1);
   }, [userData, navigate]);
 
   return (
     <Login>
+      <ToastContainer />
+
       <DetailForm onSubmit={SubmitHandler}>
         <h1>Login Page</h1>
         <div>

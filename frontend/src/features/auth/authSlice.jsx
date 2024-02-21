@@ -8,10 +8,7 @@ const userInfoFromStorage = localStorage.getItem("userInfo")
 //   ? JSON.parse(localStorage.getItem("accessToken"))
 //   : "";
 
-const accessToken =
-  localStorage.getItem("accessToken") === undefined
-    ? console.log("Its Undefined")
-    : JSON.parse(localStorage.getItem("accessToken"));
+const accessToken = JSON.parse(localStorage.getItem("accessToken")) || "";
 
 // console.log(accessToken);
 

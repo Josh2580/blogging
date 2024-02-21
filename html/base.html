@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django + Vite + React</title>
     <!-- if development -->
-    {% if debug %}
+    {% if not debug %}
     <script type="module" src="http://localhost:5173/@vite/client"></script>
 
     <script type="module">
