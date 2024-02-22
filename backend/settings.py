@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-bvjrk%_gqwui*!+$fvgm34-=(e%^*ft+euq7$yj$pq63)x91nj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework_simplejwt.token_blacklist',
-    'blog.apps.BlogConfig',
+    'blog',
 
 ]
 
@@ -144,27 +144,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'x3t5o8UUdzh8INqi6Y1Y',
-#         'HOST': 'containers-us-west-12.railway.app',
-#         'PORT': '5432',
-#     }
-# }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'blog',
-#         'USER': 'postgres',
-#         'PASSWORD': '@Secret2580',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
